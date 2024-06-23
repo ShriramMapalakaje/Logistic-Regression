@@ -1,74 +1,68 @@
-Logistic Regression for Stock Price Movement Prediction
+
+# Logistic Regression for Stock Price Movement Prediction
+
 This project utilizes logistic regression to predict whether the stock price will increase or decrease in the next 30 days based on historical stock data.
 
-Overview
-The project involves:
+## Key Features
 
-Loading historical stock price data from a CSV file.
-Preparing the data for logistic regression modeling.
-Training a logistic regression model to predict stock price movements.
-Evaluating the model's performance using accuracy, confusion matrix, and classification report.
-Making predictions for the next 30 days and visualizing the results.
-Features
-Loading Data: Reads and preprocesses historical stock price data.
-Data Preparation: Creates a target variable indicating whether the stock price will rise (1) or fall (0) in the next 30 days.
-Model Training: Splits the data into training and testing sets, trains a logistic regression model.
-Model Evaluation: Computes accuracy, confusion matrix, and classification report to evaluate model performance.
-Future Predictions: Predicts future stock price movements for the next 30 days.
-Visualization: Plots actual closing prices and marks predicted stock movements.
-Requirements
-Python 3.7 or higher
-pandas
-numpy
-matplotlib
-scikit-learn
-Installation
-Clone the repository or download the script file.
+- **Data Preparation**: Processes historical stock price data from a CSV file, creating a target variable indicating upward or downward movement.
+  
+- **Model Training**: Splits the data, trains a logistic regression model, and evaluates its performance using accuracy, confusion matrix, and classification report.
 
-Install the required Python packages:
+- **Predictions**: Generates predictions for the next 30 days and visualizes the results comparing actual closing prices with predicted movements.
 
-bash
-Copy code
-pip install pandas numpy matplotlib scikit-learn
-Usage
-Prepare your CSV file with at least two columns: Date and Close. The Date column should contain the dates of the stock prices, and the Close column should contain the closing prices of the stock.
+## Requirements
 
-Update the csv_file variable in the script with the path to your CSV file:
+- Python 3.7 or higher
+- Libraries: pandas, numpy, matplotlib, scikit-learn
 
-python
-Copy code
-csv_file = "your_stock_data.csv"  # Replace with your CSV file path
-Run the script:
+## Installation
 
-bash
-Copy code
-python logistic_regression_stock_prediction.py
-The script will output the model's accuracy, confusion matrix, and classification report.
+1. Clone the repository or download the script file.
 
-It will also print the predicted stock movements (1: Up, 0: Down) for the next 30 days.
+2. Install dependencies:
+   ```bash
+   pip install pandas numpy matplotlib scikit-learn
+   ```
 
-Additionally, it will display a plot comparing the actual closing prices with the predicted stock movements.
+## Usage
 
-Example
-Here is an example of what the CSV file should look like:
+1. Prepare your CSV file (`your_stock_data.csv`) with columns `Date` and `Close`.
 
-csv
-Copy code
+2. Update `csv_file` variable in the script:
+   ```python
+   csv_file = "your_stock_data.csv"
+   ```
+
+3. Run the script:
+   ```bash
+   python logistic_regression_stock_prediction.py
+   ```
+
+4. Outputs:
+   - Model accuracy, confusion matrix, and classification report.
+   - Predicted stock movements (1: Up, 0: Down) for the next 30 days.
+   - Plot comparing actual closing prices with predicted movements.
+
+## Example Data Format
+
+```csv
 Date,Close
-2020-01-01,300.35
-2020-01-02,302.56
-2020-01-03,298.44
+2023-01-01,350.45
+2023-01-02,355.20
+2023-01-03,358.90
 ...
-Code Explanation
-Load Data: The load_data function reads the CSV file and processes the date and closing price columns.
+```
 
-Prepare Data: The prepare_data function creates a target variable (Target) indicating whether the stock price will rise or fall in the next 30 days.
+## Code Snippet Explanation
 
-Train and Evaluate Model: The train_and_evaluate_model function splits the data into training and testing sets, trains a logistic regression model, and evaluates its performance using accuracy, confusion matrix, and classification report.
+- **Load Data**: Reads CSV file and processes date and closing price columns.
+- **Prepare Data**: Creates target variable based on future stock price movement.
+- **Train and Evaluate Model**: Splits data, trains logistic regression, and evaluates performance.
+- **Make Predictions**: Predicts future stock movements.
+- **Plot Results**: Visualizes actual vs. predicted stock movements.
 
-Make Predictions: The make_predictions function predicts the stock movements for the next 30 days based on the trained model.
+## License
 
-Plot Results: The plot_results function plots the actual closing prices and marks the predicted stock movements.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-License
-This project is licensed under the MIT License.
